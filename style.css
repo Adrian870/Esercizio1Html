@@ -1,0 +1,18 @@
+header{
+    background-color: lightcyan;
+    text-align: center;
+    margin-top: 0px;
+}
+.Navb {
+    background-color: darkkhaki;
+    text-align: center
+}
+
+table, th, td {
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+th{
+    background-color: aquamarine;
+}
