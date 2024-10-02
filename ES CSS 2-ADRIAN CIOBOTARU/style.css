@@ -1,0 +1,88 @@
+body{
+    background-image: url(R.jpg);
+    
+}
+
+.Titolo {
+    color: rgb(255, 255, 255);
+    border: 5px solid black;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: red;
+    margin: 0;
+}
+
+
+.nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-a;
+    border: 5px solid;
+    margin-top: 5px;
+}
+
+@media (max-width:768px) {
+    .nav{
+        flex-direction: column;
+    }    
+    }
+
+.Testo{
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    border: 2px solid ;
+    border-radius: 10px;
+    margin-top: 2rem;
+    padding: 10px;
+    display:block ;
+    margin-right: 300px;
+    
+}
+
+.Dati{
+     margin-bottom: 2rem;
+     border: 0.2rem solid;
+     border-radius: 10px;
+     max-width: 30rem;
+     padding: 10px;
+     display: flex;
+     background-color: black;
+     color: white;
+}
+
+.Sesso{
+    margin-bottom: 2rem;
+    border: 0.2rem solid;
+    border-radius: 10px;
+    max-width: 30rem;
+    padding: 10px;
+    display: flex;
+    background-color: black;
+    color: white;
+}
+
+
+.Accesso{
+    margin-bottom: 2rem;
+    border: 0.2rem solid;
+    border-radius: 10px;
+    max-width: 30rem;
+    padding: 10px;
+    background-color: black;
+    color: white;
+}
+
+button:hover{
+    background-color: blue;
+}
+
+table, th, td {
+    border: 0.2rem solid rgb(255, 0, 0);
+    border-collapse: collapse;
+    padding: 10px;
+    background-color: black;
+    color: white;
+  }
+
