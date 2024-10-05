@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrazione</title>
+</head>
+<body>
+    <h1>Registrazione</h1>
+    <form id="registrationForm">
+        <input type="email" id="email" placeholder="Email" required><br><br>
+        <input type="text" id="nome" placeholder="Nome" required><br><br>
+        <input type="text" id="cognome" placeholder="Cognome" required><br><br>
+        <input type="password" id="password" placeholder="Password" required><br><br>
+        <button type="submit">Registrati</button>
+    </form>
+
+    <div id="userData">
+        <h2>Benvenuto</h2>
+        <ul id="userList"></ul>
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function() {
+            event.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const nome = document.getElementById('nome').value;
+            const cognome = document.getElementById('cognome').value;
+            const password = document.getElementById('password').value;
+
+            if (email && nome && cognome && password) {
+                const listautente = document.getElementById('userList');
+                listautente.innerHTML = `
+                    <li>Email: ${email}</li>
+                    <li>Nome: ${nome}</li>
+                    <li>Cognome: ${cognome}</li>
+                    <li>Password: ${password}</li>
+                `;
+            } else {
+                console.error('Tutti i campi sono obbligatori.');
+            }
+        });
+    </script>
+</body>
+</html>
