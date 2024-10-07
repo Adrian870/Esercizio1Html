@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header></header>
+    <main>
+        <h1>Meteo</h1>
+        <input type="text" placeholder="Inserisci la citta" id="campo-citta">
+        <button onclick="cerca_meteo()">Clicca</button>
+        <div id="risultato"></div>
+    </main>
+    <footer></footer>
+    
+
+<script>
+    
+    async function cerca_meteo() {
+        let citta = document.getElementById("campo-citta").value;  
+        
+        let risposta = await fetch(
+            `http://api.weatherapi.com/v1/current.json?key=027ae9166276434e885131336240710&q=${citta}&aqi=no`
+        );
+        
+        let risposta_json = await risposta.json();
+        console.log(risposta_json)
+        
+        let div = document.getElementById("risultato");
+        let image = document.createElement("img");
+        let image_da_pulire = risposta_json.current.condition.icon;
+        image_da_pulire = image_da_pulire.substring(2)
+        console.log(image_da_pulire);
+        let condition = document.createElement("h2")
+        condition.innerHTML = risposta_json.current.condition.text;
+    
+        div.appendChild(condition);
+        div.appendChild(image);
+        console.log("https://" + image)
+    }
+</script>
+</body>
+</html>
