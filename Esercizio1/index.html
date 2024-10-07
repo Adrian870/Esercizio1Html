@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        if (localStorage.getItem('utente') == null){
+           window.location.href = "login.html"
+       }
+       </script>
+</head>
+<body>
+    <header>
+        <script> 
+        </script>
+    </header>
+    <main>
+        <h1>Menu</h1>
+        <input type="text" placeholder="Che Cibo vuoi cercare?" id="campo-cibo">
+        <button onclick="richiesta_async()">Cerca</button>
+        <h1>Benvenuto <span id="nome-utente"></span> </h1>
+        <button onclick="logout_to_index()">Logout</button>
+        <section id="piatti"></section>
+    </main>
+    <footer></footer>
+    <script>
+         function logout_to_index(){
+        localStorage.removeItem("utente")
+        window.location.href = "login.html"
+    }
+
+    let utente = JSON.parse (localStorage.getItem("utente"));
+    document.getElementById("nome-utente").innerHTML = utente.username;
+
+        function crea_card_piatti(lista_piatti){
+            if (lista_piatti) {
+                console.log("query con risultati: " + lista_piatti.length);
+                document.getElementById("piatti").innerHTML = "";
+                for (let i = 0; i < lista_piatti.length; i++){
+                    let div_piatti = document.createElement("div");
+                    let nome_piatto = document.createElement("h2");
+                    let provenienza = document.createElement("h3");
+                    let imageCibo = document.createElement("img");
+                    let preparazione = document.createElement("p");
+
+                    nome_piatto.innerHTML = lista_piatti[i].strMeal;
+                    provenienza.innerHTML = lista_piatti[i].strArea;
+                    imageCibo.src = lista_piatti[i].strMealThumb;
+                    imageCibo.width = 200;
+                    imageCibo.height = 200;
+                    preparazione.innerHTML = lista_piatti[i].strInstructions;
+
+                    div_piatti.appendChild(nome_piatto);
+                    div_piatti.appendChild(provenienza);
+                    div_piatti.appendChild(imageCibo);
+                    div_piatti.appendChild(preparazione);
+
+                    document.getElementById("piatti").appendChild(div_piatti);
+                }
+            } else {
+                console.error("Query con risultati 0");
+            }
+        }
+
+        async function richiesta_async() {
+            let valore_utente = document.getElementById("campo-cibo").value;
+            let risposta = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${valore_utente}`);
+            let listacibo = await risposta.json();
+            if (listacibo.meals) {
+                crea_card_piatti(listacibo.meals);
+            } else {
+                console.error("Query con risultati 0");
+            }
+        }
+    </script>
+</body>
+</html>
