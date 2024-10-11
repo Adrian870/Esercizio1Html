@@ -1,0 +1,9 @@
+.Gioco{
+    background-color: aqua;
+    display: flex;
+    border: 5px solid black;
+    border-radius: 20px;
+    padding: 20px;
+    max-width: 500px;
+   
+}

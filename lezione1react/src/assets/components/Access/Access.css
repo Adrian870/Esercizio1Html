@@ -1,0 +1,44 @@
+.foto{
+    width: 100px;
+    margin: 0 auto;
+}
+
+.foto > img {
+    border: 3px solid;
+    border-radius: 50%;
+}
+
+.info{
+    width: 700px;
+    margin: 0 auto;
+    padding: 10px;   
+}
+
+#interazioni{
+    display: flex;
+    flex-direction: row;
+    width: 600px;
+    margin: 0 auto;
+    max-height: 100px;
+}
+
+.riquadri{border:3px solid black; border-radius: 20px; padding: 20px; margin: 10px; max-width: 200px; background-color: beige; text-align: center;}
+
+
+.credenziali{
+    width: 700px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+
+body{
+    background-color: #ccc;
+}
+
+.User{
+    display:flex;
+    flex-direction: column;
+    margin: 3px solid;
+}
+

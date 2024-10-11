@@ -1,0 +1,8 @@
+.usa >table {
+    background-color: aqua;
+    border: 2px solid;    
+}
+
+.usa > thead{
+    border: 2px solid;
+}

@@ -1,0 +1,24 @@
+.counter{
+    display:flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+
+.conto{text-align: center; background-color: #fafafa; padding: 20px; display: flex; flex-direction: column; align-items: center;min-width: 700px; margin: 10px; border:3px solid black; border-radius: 20px;}
+.conto h1{font-size: 50px;}
+.conto .btns{display: flex; gap: 20px; align-items: center;}
+
+
+.counter > .card2{
+    border:3px solid black; border-radius: 20px; padding: 50px; margin: 10px; min-width: 600px;  display: flex; flex-direction: row; background-color: rebeccapurple;
+    margin-left: 10px;
+    min-width: 610px;
+    
+}   
+
+.card2 .head2{display: flex; gap: 30px}
+.card2 .title2 h3{margin: 0; padding: 10px;}
+.card2 .head2 .icon2{padding: 10;}
+ 
+.card2 .description2 p{margin: 0;}

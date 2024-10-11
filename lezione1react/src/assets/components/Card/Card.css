@@ -1,0 +1,14 @@
+.flex{
+    display: flex;
+    flex-direction:row ;
+    align-items: baseline;
+    padding: 10px;
+}
+
+.card{ border:3px solid black; border-radius: 20px; padding: 50px; margin: 10px; max-width: 600px;  display: flex; flex-direction: row; background-color: brown;}
+ 
+.card .head{display: flex; gap: 30px}
+.card .title h3{margin: 0; padding: 10px;}
+.card .head .icon{padding: 10;}
+ 
+.card .description p{margin: 0;}
